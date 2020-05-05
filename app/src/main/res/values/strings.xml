@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Cycle Save</string>
+    <string name="bicycle_icon_desc">bicycle icon</string>
 </resources>
