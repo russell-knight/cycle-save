@@ -18,37 +18,37 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="150dp"
-        android:layout_height="0dp"
+        android:layout_height="130dp"
         android:layout_gravity="center"
-        android:layout_weight="2"
+        android:layout_marginTop="100dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/bicycle_icon_desc"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/splash_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.614"
         app:srcCompat="@drawable/bicycle_icon_white" />
+
+    <TextView
+        android:id="@+id/spalsh_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/splash_title"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp" />
 
     <TextView
         android:id="@+id/splash_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="228dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="20dp"
         android:fontFamily="sans-serif"
         android:paddingLeft="20sp"
         android:paddingRight="20sp"
         android:text="@string/splash_text"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="18sp" />
 
 </LinearLayout>
 
