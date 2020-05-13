@@ -27,7 +27,7 @@
         app:srcCompat="@drawable/bicycle_icon_white" />
 
     <TextView
-        android:id="@+id/spalsh_title"
+        android:id="@+id/splash_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/splash_title"

@@ -15,7 +15,7 @@ class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        val textView = findViewById(R.id.splash_text) as TextView
+        val textView = findViewById<TextView>(R.id.splash_text)
         textView.text = splashQuotes.random()
     }
 }
