@@ -13,10 +13,10 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val costs_button = findViewById<Button>(R.id.button_view_costs)
-        costs_button.setOnClickListener{
-            val costs_intent = Intent(this, CostsActivity::class.java)
-            startActivity(costs_intent)
+        val costsButton = findViewById<Button>(R.id.button_view_costs)
+        costsButton.setOnClickListener{
+            val costsIntent = Intent(this, CostsActivity::class.java)
+            startActivity(costsIntent)
         }
     }
 

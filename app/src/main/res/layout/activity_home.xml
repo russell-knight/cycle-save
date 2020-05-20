@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <ImageView
             android:layout_width="172dp"
@@ -17,6 +17,7 @@
             android:layout_marginBottom="30dp"
             android:contentDescription="@string/bicycle_icon_desc"
             android:src="@drawable/bicycle_icon" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -24,6 +25,7 @@
             android:layout_marginBottom="50dp"
             android:text="100%"
             android:textSize="18sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -35,12 +37,13 @@
                 android:layout_width="46dp"
                 android:layout_height="35dp"
                 android:src="@drawable/money_icon" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
-                android:layout_marginBottom="15dp"
                 android:text="Money Saved"
                 android:textSize="24sp" />
 
@@ -51,6 +54,7 @@
                 android:textAlignment="textStart"
                 android:textSize="18sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -62,12 +66,13 @@
                 android:layout_width="46dp"
                 android:layout_height="35dp"
                 android:src="@drawable/blue_bicycle_icon" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
-                android:layout_marginBottom="15dp"
                 android:text="Trips Taken"
                 android:textSize="24sp" />
 
@@ -78,6 +83,7 @@
                 android:textAlignment="textStart"
                 android:textSize="18sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -89,12 +95,13 @@
                 android:layout_width="46dp"
                 android:layout_height="35dp"
                 android:src="@drawable/calorie_burned_icon" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
-                android:layout_marginBottom="15dp"
                 android:text="Calories Burned"
                 android:textSize="24sp" />
 
@@ -108,9 +115,10 @@
 
 
     </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <Button
             android:id="@+id/button_view_costs"
@@ -118,7 +126,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:text="View Costs" />
+            android:text="@string/view_costs_text" />
 
         <Button
             android:id="@+id/button_view_trips"
@@ -126,7 +134,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            tools:text="View Trips" />
+            android:text="@string/view_trips_text" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

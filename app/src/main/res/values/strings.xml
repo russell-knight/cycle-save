@@ -4,4 +4,7 @@
     <string name="splash_text">Here is a quote or statistic relating to bicycles</string>
     <string name="splash_title">CycleSave</string>
     <string name="add_cost">add cost</string>
+    <string name="cycling_costs_textview">Cycling Costs</string>
+    <string name="view_costs_text">View Costs</string>
+    <string name="view_trips_text">View Trips</string>
 </resources>
