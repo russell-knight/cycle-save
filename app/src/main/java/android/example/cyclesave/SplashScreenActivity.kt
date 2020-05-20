@@ -24,7 +24,9 @@ class SplashScreenActivity : AppCompatActivity() {
         }
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         val intent = Intent(this, HomeActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP) // remove this
         startActivity(intent)
+        finish()
         return true
     }
 }
