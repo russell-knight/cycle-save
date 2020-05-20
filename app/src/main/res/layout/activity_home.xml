@@ -34,7 +34,7 @@
             <ImageView
                 android:layout_width="46dp"
                 android:layout_height="35dp"
-                android:src="@drawable/bicycle_icon" />
+                android:src="@drawable/money_icon" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
             <ImageView
                 android:layout_width="46dp"
                 android:layout_height="35dp"
-                android:src="@drawable/bicycle_icon" />
+                android:src="@drawable/blue_bicycle_icon" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
             <ImageView
                 android:layout_width="46dp"
                 android:layout_height="35dp"
-                android:src="@drawable/bicycle_icon" />
+                android:src="@drawable/calorie_burned_icon" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -119,12 +119,14 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
             android:text="View Costs" />
+
         <Button
             android:id="@+id/button_view_trips"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"/>
+            tools:text="View Trips" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
