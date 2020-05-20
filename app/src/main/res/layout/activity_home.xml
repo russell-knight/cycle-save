@@ -17,7 +17,6 @@
             android:layout_marginBottom="30dp"
             android:contentDescription="@string/bicycle_icon_desc"
             android:src="@drawable/bicycle_icon" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,30 +24,88 @@
             android:layout_marginBottom="50dp"
             android:text="100%"
             android:textSize="18sp" />
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            android:layout_marginBottom="15dp"
-            android:text="Money Saved"
-            android:textSize="24sp"/>
-        <TextView
+            android:paddingEnd="15dp">
+
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="35dp"
+                android:src="@drawable/bicycle_icon" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:text="Money Saved"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$1500"
+                android:textAlignment="textStart"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            android:layout_marginBottom="15dp"
-            android:text="Trips Taken"
-            android:textSize="24sp"/>
-        <TextView
+            android:paddingEnd="15dp">
+
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="35dp"
+                android:src="@drawable/bicycle_icon" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:text="Trips Taken"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="112"
+                android:textAlignment="textStart"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            android:layout_marginBottom="15dp"
-            android:text="Calories Burned"
-            android:textSize="24sp"/>
+            android:paddingEnd="15dp">
+
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="35dp"
+                android:src="@drawable/bicycle_icon" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:text="Calories Burned"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2345"
+                android:textAlignment="textStart"
+                android:textSize="18sp" />
+        </LinearLayout>
+
 
     </LinearLayout>
     <RelativeLayout
