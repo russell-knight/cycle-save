@@ -29,7 +29,7 @@ class DatabaseHelper(var context: Context): SQLiteOpenHelper(context, DATABASE_N
         TODO("Not yet implemented")
     }
 
-    fun insertData(cost: Cost) {6611
+    fun insertData(cost: Cost) {
         val db = this.writableDatabase
         var cv = ContentValues()
         cv.put(COL_NAME, cost.name)
