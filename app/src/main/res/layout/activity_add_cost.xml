@@ -32,14 +32,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"/>
-        <EditText
+
+        <TextView
             android:id="@+id/editText_date"
-            android:clickable="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:ems="10"
-            android:hint="Date"/>
+            android:clickable="true"
+            android:textColor="?attr/editTextColor"
+            android:background="?attr/editTextBackground"
+            android:hint="@string/date_hint_text"
+            android:textSize="18sp" />
         <Button
             android:id="@+id/confirm_cost_button"
             android:text="Confirm"
