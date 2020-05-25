@@ -2,8 +2,10 @@ package android.example.cyclesave
 
 import android.app.DatePickerDialog
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import kotlinx.android.synthetic.main.activity_add_cost.*
 import java.util.*
 
@@ -11,6 +13,13 @@ class AddCost : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_cost)
+
+        // Toolbar
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        toolbar.title = "Add Cost"
+        setSupportActionBar(toolbar)
+
+
 
         // Prevent keyboard from appearing when date field is selected
         editText_date.showSoftInputOnFocus = false
