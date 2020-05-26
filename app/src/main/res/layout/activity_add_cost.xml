@@ -1,50 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <EditText
+        android:id="@+id/editText_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar" />
-        <EditText
-            android:id="@+id/editText_name"
-            android:hint="Name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"/>
-        <EditText
-            android:id="@+id/editText_price"
-            android:hint="Price"
-            android:inputType="numberSigned"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="@string/editText_name"
+        android:importantForAutofill="no"
+        android:inputType="text" />
 
-        <TextView
-            android:id="@+id/editText_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:clickable="true"
-            android:textColor="?attr/editTextColor"
-            android:background="?attr/editTextBackground"
-            android:hint="@string/date_hint_text"
-            android:textSize="18sp" />
+    <EditText
+        android:id="@+id/editText_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="@string/editText_price"
+        android:importantForAutofill="no"
+        android:inputType="numberSigned" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/fab"
-            android:background="#fff"
-            android:layout_gravity="center"
-            android:layout_margin="16dp"
-            android:src="@drawable/ic_add_circle_24dp" />
+    <TextView
+        android:id="@+id/editText_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="?attr/editTextBackground"
+        android:clickable="true"
+        android:hint="@string/date_hint_text"
+        android:textColor="?attr/editTextColor"
+        android:textSize="18sp" />
 
-    </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_done_white_24dp"/>
+
 </LinearLayout>

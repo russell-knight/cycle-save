@@ -8,4 +8,6 @@
     <string name="view_costs_text">View Costs</string>
     <string name="view_trips_text">View Trips</string>
     <string name="date_hint_text">Date</string>
+    <string name="editText_name">Name</string>
+    <string name="editText_price">Price</string>
 </resources>

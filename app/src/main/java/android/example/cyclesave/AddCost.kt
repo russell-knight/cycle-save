@@ -24,7 +24,7 @@ class AddCost : AppCompatActivity() {
         var cal = Calendar.getInstance()
 
         val dateSetListener =
-            DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+            DatePickerDialog.OnDateSetListener { _, year, monthOfYear, dayOfMonth ->
                 cal.set(Calendar.YEAR, year)
                 cal.set(Calendar.MONTH, monthOfYear)
                 cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
@@ -34,10 +34,12 @@ class AddCost : AppCompatActivity() {
                 textView.text = sdf.format(cal.time)
             }
         textView.setOnClickListener {
-            DatePickerDialog(this@AddCost, dateSetListener,
+            DatePickerDialog(
+                this@AddCost, dateSetListener,
                 cal.get(Calendar.YEAR),
                 cal.get(Calendar.MONTH),
-                cal.get(Calendar.DAY_OF_MONTH)).show()
+                cal.get(Calendar.DAY_OF_MONTH)
+            ).show()
         }
     }
 }
