@@ -36,12 +36,15 @@
             android:background="?attr/editTextBackground"
             android:hint="@string/date_hint_text"
             android:textSize="18sp" />
-        <Button
-            android:id="@+id/confirm_cost_button"
-            android:text="Confirm"
-            android:layout_marginTop="70dp"
-            android:layout_gravity="center"
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/fab"
+            android:background="#fff"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_add_circle_24dp" />
+
     </LinearLayout>
 </LinearLayout>
