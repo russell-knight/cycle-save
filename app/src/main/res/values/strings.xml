@@ -10,4 +10,5 @@
     <string name="date_hint_text">Date</string>
     <string name="editText_name">Name</string>
     <string name="editText_price">Price</string>
+    <string name="empty_not_saved">Cost not saved because it is empty.</string>
 </resources>

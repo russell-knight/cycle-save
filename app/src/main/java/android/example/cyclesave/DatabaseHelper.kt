@@ -11,7 +11,7 @@ val TABLE_NAME = "Costs"
 val COL_ID = "id"
 val COL_NAME = "name"
 val COL_PRICE = "price"
-val COL_DATE = "date purchased"
+val COL_DATE = "datePurchased"
 
 class DatabaseHelper(var context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null,1) {
     // This method will be executed when the device doesn't contain a DB
@@ -40,5 +40,9 @@ class DatabaseHelper(var context: Context): SQLiteOpenHelper(context, DATABASE_N
             Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show()
         else
             Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
+    }
+
+    fun deleteDatabase(context: Context) {
+        context.deleteDatabase("CycleSaveDB")
     }
 }
