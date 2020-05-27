@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,6 +25,11 @@ class CostsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_costs)
+
+        // Toolbar
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        toolbar.title = "Costs"
+        setSupportActionBar(toolbar)
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
         val adapter = CostListAdapter(this)

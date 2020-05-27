@@ -15,7 +15,7 @@ class CostListAdapter internal constructor(
     private var costs = emptyList<Cost>() // Cached copy of costs
 
     inner class CostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val costItemView: TextView = itemView.findViewById(R.id.textView)
+        val costItemView: TextView = itemView.findViewById(R.id.cost_name_text)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CostViewHolder {
@@ -25,7 +25,7 @@ class CostListAdapter internal constructor(
 
     override fun onBindViewHolder(holder: CostViewHolder, position: Int) {
         val current = costs[position]
-        holder.costItemView.text = current.name // hmmmm
+        holder.costItemView.text = current.name
     }
 
     internal fun setCosts(costs: List<Cost>) {
