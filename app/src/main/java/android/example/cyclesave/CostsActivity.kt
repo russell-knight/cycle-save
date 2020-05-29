@@ -31,6 +31,7 @@ class CostsActivity : AppCompatActivity() {
         toolbar.title = "Costs"
         setSupportActionBar(toolbar)
 
+        // RecyclerView and Adapter setup
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
         val adapter = CostListAdapter(this)
         recyclerView.adapter = adapter

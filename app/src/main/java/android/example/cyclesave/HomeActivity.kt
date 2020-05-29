@@ -9,7 +9,8 @@ import android.widget.Button
 
 class HomeActivity : AppCompatActivity() {
 
-    private var moneySaved = 0;
+    private var tripsTaken = 0
+    private var moneySaved = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
