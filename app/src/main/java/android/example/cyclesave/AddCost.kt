@@ -52,8 +52,8 @@ class AddCost : AppCompatActivity() {
             finish()
         }
 
-        // Date Dialog View
-        val myFormat = "dd/MM/yyyy" // mention the format you need
+        // Date Dialog View to display calendar and format date
+        val myFormat = "dd/MM/yyyy"
         val textView: TextView = findViewById(R.id.editText_date)
         textView.text = SimpleDateFormat(myFormat).format(System.currentTimeMillis())
 
