@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_home.*
+import kotlin.math.roundToInt
 
 // import FloatingButton here?
 
@@ -14,31 +16,34 @@ class HomeActivity : AppCompatActivity() {
 
     private val returnHomeRequestCode = 1
 
-    private var totalCost = 0
+    private var transportSavings = 0.0
     private var tripsTaken = 0
-    private var moneySaved = 0
+    private var costRemaining = 0.0
+    private var repaymentProgress = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        // Global variable
-        var moneySaved = findViewById<TextView>(R.id.money_saved_value)
-        moneySaved.text = "$" + GlobalVariables.totalCost.toString()
-        // Set initial values
-        var tripsText = findViewById<TextView>(R.id.trips_taken_value)
-        tripsText.text = tripsTaken.toString()
+        calculateCosts()
+        updateValues()
 
         val addTrip = findViewById<Button>(R.id.add_trip_button)
         addTrip.setOnClickListener{
             tripsTaken++
-            tripsText.text = tripsTaken.toString()
+            calculateCosts()
+            updateValues()
         }
 
         val subtractTrip = findViewById<Button>(R.id.subtract_trip_button)
         subtractTrip.setOnClickListener{
-            tripsTaken--
-            tripsText.text = tripsTaken.toString()
+            // trips taken cannot be negative
+            if (tripsTaken != 0) {
+                tripsTaken--
+                calculateCosts()
+                updateValues()
+            }
+
         }
 
         // Set button to go to Costs Activity
@@ -51,8 +56,27 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        // Retrieve global variables
-        var moneySaved = findViewById<TextView>(R.id.money_saved_value)
-        moneySaved.text = "$" + GlobalVariables.totalCost.toString()
+        calculateCosts()
+        updateValues()
+    }
+    /* This function updates the values for the TextViews on the home screen */
+    fun updateValues() {
+        trips_taken_value.text = tripsTaken.toString()
+        money_saved_value.text = "$" + transportSavings
+        cost_remaining.text = "Repayment remaining: $" + costRemaining
+        repayment_percentage.text = "Repayment Progress: " + repaymentProgress.toString() + "%"
+    }
+
+    /* Calculates costs and updates necessary variables */
+    fun calculateCosts() {
+        this.transportSavings = tripsTaken * GlobalVariables.FULL_FARE
+        costRemaining = GlobalVariables.totalCost - transportSavings
+        if (GlobalVariables.totalCost == 0.0) {
+            repaymentProgress = 0
+        }
+        else {
+            repaymentProgress = 100 - (costRemaining/GlobalVariables.totalCost*100).roundToInt()
+        }
+
     }
 }

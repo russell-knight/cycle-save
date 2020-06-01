@@ -18,7 +18,7 @@ class CostsActivity : AppCompatActivity() {
 
     private val newCostActivityRequestCode = 1
     private lateinit var costViewModel: CostViewModel
-    var totalCost = 0
+    var totalCost = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
