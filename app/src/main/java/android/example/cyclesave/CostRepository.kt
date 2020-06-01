@@ -13,4 +13,9 @@ class CostRepository(private val costDao: CostDao) {
     suspend fun insert(cost: Cost) {
         costDao.insertCost(cost)
     }
+
+    suspend fun deleteAll() {
+        costDao.deleteAll()
+    }
+
 }

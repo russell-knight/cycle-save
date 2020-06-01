@@ -5,6 +5,7 @@
     package="android.example.cyclesave">
 
     <application
+        android:name=".GlobalVariables"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"

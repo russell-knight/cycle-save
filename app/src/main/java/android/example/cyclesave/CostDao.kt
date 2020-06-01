@@ -17,7 +17,7 @@ interface CostDao {
     @Query("SELECT * FROM cost WHERE name == :name")
     fun getGenderByName(name: String): List<Cost>
 
-    @Query("SELECT * FROM cost ORDER BY name ASC")
+    @Query("SELECT * FROM cost")
     fun getCosts(): LiveData<List<Cost>>
 
     @Query("DELETE FROM cost")

@@ -1,5 +1,6 @@
 package android.example.cyclesave
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,6 +12,9 @@ import android.widget.Toast
 
 class HomeActivity : AppCompatActivity() {
 
+    private val returnHomeRequestCode = 1
+
+    private var totalCost = 0
     private var tripsTaken = 0
     private var moneySaved = 0
 
@@ -18,6 +22,9 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        // Global variable
+        var moneySaved = findViewById<TextView>(R.id.money_saved_value)
+        moneySaved.text = "$" + GlobalVariables.totalCost.toString()
         // Set initial values
         var tripsText = findViewById<TextView>(R.id.trips_taken_value)
         tripsText.text = tripsTaken.toString()
@@ -40,5 +47,12 @@ class HomeActivity : AppCompatActivity() {
             val costsIntent = Intent(this, CostsActivity::class.java)
             startActivity(costsIntent)
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Retrieve global variables
+        var moneySaved = findViewById<TextView>(R.id.money_saved_value)
+        moneySaved.text = "$" + GlobalVariables.totalCost.toString()
     }
 }

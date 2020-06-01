@@ -5,17 +5,13 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_add_cost.*
 import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 import java.util.*
 
 class AddCost : AppCompatActivity() {
@@ -46,7 +42,10 @@ class AddCost : AppCompatActivity() {
                 val name = editNameView.text.toString()
                 val price = editText_price.text.toString().toInt()
                 val date = editText_date.text.toString()
-                replyIntent.putExtra(EXTRA_REPLY, name)
+
+                replyIntent.putExtra(EXTRA_REPLY_NAME, name)
+                replyIntent.putExtra(EXTRA_REPLY_PRICE, price)
+                replyIntent.putExtra(EXTRA_REPLY_DATE, date)
                 setResult(Activity.RESULT_OK, replyIntent)
             }
             finish()
@@ -77,7 +76,10 @@ class AddCost : AppCompatActivity() {
             ).show()
         }
     }
+
     companion object {
-        const val EXTRA_REPLY = "com.example.android.costlistsql.REPLY"
+        const val EXTRA_REPLY_NAME = "com.example.android.costlistsql.REPLY_NAME"
+        const val EXTRA_REPLY_PRICE = "com.example.android.costlistsql.REPLY_PRICE"
+        const val EXTRA_REPLY_DATE = "com.example.android.costlistsql.REPLY_DATE"
     }
 }

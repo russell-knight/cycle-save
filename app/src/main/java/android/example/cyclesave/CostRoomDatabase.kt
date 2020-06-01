@@ -54,7 +54,7 @@ public abstract class CostRoomDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     CostRoomDatabase::class.java,
-                    "word_database"
+                    "cost_database"
                 ).build()
                 INSTANCE = instance
                 return instance

@@ -3,6 +3,7 @@ package android.example.cyclesave;
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -17,15 +18,26 @@ class CostsActivity : AppCompatActivity() {
 
     private val newCostActivityRequestCode = 1
     private lateinit var costViewModel: CostViewModel
+    var totalCost = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_costs)
 
+        // Retrieve global variables and update total cost
+        totalCost = GlobalVariables.totalCost
+        total_cost_value.text = "$" + totalCost.toString()
+
         // Toolbar
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         toolbar.title = "Costs"
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        toolbar.setNavigationOnClickListener {
+            startActivity(Intent(this@CostsActivity, HomeActivity::class.java))
+        }
+
 
         // RecyclerView and Adapter setup
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
@@ -55,10 +67,18 @@ class CostsActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == newCostActivityRequestCode && resultCode == Activity.RESULT_OK) {
-            data?.getStringExtra(AddCost.EXTRA_REPLY)?.let {
-                val cost = Cost(it, 455, "12/05/17")
-                costViewModel.insert(cost)
-            }
+
+            // Retrieve values passed from AddCost
+            val name = data!!.getStringExtra(AddCost.EXTRA_REPLY_NAME)
+            val price = data.getIntExtra(AddCost.EXTRA_REPLY_PRICE, 0)
+            val date = data.getStringExtra(AddCost.EXTRA_REPLY_DATE)
+
+            val cost = Cost(name, price, date)
+            costViewModel.insert(cost)
+
+            GlobalVariables.totalCost += price // update global var total cost
+            total_cost_value.text = "$" + GlobalVariables.totalCost.toString() // update local total cost
+
         } else {
             Toast.makeText(
                 applicationContext,
