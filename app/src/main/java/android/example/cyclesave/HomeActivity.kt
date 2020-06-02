@@ -65,6 +65,7 @@ class HomeActivity : AppCompatActivity() {
         money_saved_value.text = "$" + transportSavings
         cost_remaining.text = "Repayment remaining: $" + costRemaining
         repayment_percentage.text = "Repayment Progress: " + repaymentProgress.toString() + "%"
+        progressBar.progress = repaymentProgress
     }
 
     /* Calculates costs and updates necessary variables */
